@@ -1,28 +1,34 @@
 'use strict';
 var Alexa = require('alexa-sdk');
-var APP_ID = undefined;  // TODO replace with your app ID (OPTIONAL).
+var APP_ID = robofying;  // TODO replace with your app ID (OPTIONAL).
 
 var languageStrings = {
     "en-GB": {
         "translation": {
             "FACTS": [
-                "A year on Mercury is just 88 days long.",
-                "Despite being farther from the Sun, Venus experiences higher temperatures than Mercury.",
-                "Venus rotates anti-clockwise, possibly because of a collision in the past with an asteroid.",
-                "On Mars, the Sun appears about half the size as it does on Earth.",
-                "Earth is the only planet not named after a god.",
-                "Jupiter has the shortest day of all the planets.",
-                "The Milky Way galaxy will collide with the Andromeda Galaxy in about 5 billion years.",
-                "The Sun contains 99.86% of the mass in the Solar System.",
-                "The Sun is an almost perfect sphere.",
-                "A total solar eclipse can happen once every 1 to 2 years. This makes them a rare event.",
-                "Saturn radiates two and a half times more energy into space than it receives from the sun.",
-                "The temperature inside the Sun can reach 15 million degrees Celsius.",
-                "The Moon is moving approximately 3.8 cm away from our planet every year."
+                "In 1833 a man by the name of Charles Babbage invented all the parts that are now used for a modern computer. But it was only 120 years later that the first ‘modern’ computers were invented.",
+                "Konrad Zuse was the inventor of the first computer in the world in 1936 and he named it the Z1. In 1939, he created the Z2 as the first electro-mechanical computer in the world.",
+                "So computers were born, and these early computers were made in the 1940s and were around the size of a large room and they used heaps of electricity. Can you imagine having a computer the size of a large room? How would you be able to sit in front of it?",
+                "Computers as we know them today only really started being made in 1980.",
+                "In 1980, the first one gigabyte disk drive was released in the world. It was a whopping US$40,000 with the weight of 550 pounds (almost 227kg). How on Earth did they move it?",
+                "Well, it’s literally a machine that takes what you put into it, and then gives you some information back. So you give it a command, just like you would your dog and it follows the command to give you the result you want. Pretty awesome machines these are.",
+                "Computers have something called a microprocessor that can make calculations super-fast.",
+                "They also have a memory, or what is referred to as RAM. This stores all the information you need when you’re not using it. It also keeps everything your computer needs to work nice and safe.",
+                "Computers have fans to keep them cool; otherwise they’ll get too hot",
+                "Do you enjoy playing video games? Well there are two games that were the first ever made in the US called Asteroids and Lunar Lander in 1980. Have you heard of them?",
+                "Over 6,000 computer viruses are released each month.",
+                "This is crazy! The first computer mouse ever made was made of wood.",
+                "Did you know that you blink up to 20 times a minute? Well this is quite awesome…you only blink 7 times a minute when you’re using a computer! Must be all that concentration."
+                "If you open up the case of the original Macintosh, there are 47 signatures there, which are from each member of the Apple’s Macintosh division in 1982."
+                "The first Apple computer ever made by Steve Jobs and Steve Wozniak was made from old parts they collected for free from their staff!."
+                "Facebook has over a billion users. If it was a country it would be the third largest in the world."
+                "HP, Google, Microsoft and Apple all started out of garages. Wow, and look how far they’ve come."
+                "Stewardesses’ is the longest word you can type with one hand. Go on, give it a try."
+                "When you’re all grown up and working and you use a computer each day, your hands would have travelled 12.6 miles (about 20km) per day!"
             ],
-            "SKILL_NAME" : "British Space Facts",
-            "GET_FACT_MESSAGE" : "Here's your fact: ",
-            "HELP_MESSAGE" : "You can say tell me a space fact, or, you can say exit... What can I help you with?",
+            "SKILL_NAME" : "English Computer Facts",
+            "GET_FACT_MESSAGE" : "Here's your computer fact: ",
+            "HELP_MESSAGE" : "You can say tell me a computer fact, or, you can say exit... What can I help you with?",
             "HELP_REPROMPT" : "What can I help you with?",
             "STOP_MESSAGE" : "Goodbye!"
         }
@@ -30,52 +36,34 @@ var languageStrings = {
     "en-US": {
         "translation": {
             "FACTS": [
-                "A year on Mercury is just 88 days long.",
-                "Despite being farther from the Sun, Venus experiences higher temperatures than Mercury.",
-                "Venus rotates counter-clockwise, possibly because of a collision in the past with an asteroid.",
-                "On Mars, the Sun appears about half the size as it does on Earth.",
-                "Earth is the only planet not named after a god.",
-                "Jupiter has the shortest day of all the planets.",
-                "The Milky Way galaxy will collide with the Andromeda Galaxy in about 5 billion years.",
-                "The Sun contains 99.86% of the mass in the Solar System.",
-                "The Sun is an almost perfect sphere.",
-                "A total solar eclipse can happen once every 1 to 2 years. This makes them a rare event.",
-                "Saturn radiates two and a half times more energy into space than it receives from the sun.",
-                "The temperature inside the Sun can reach 15 million degrees Celsius.",
-                "The Moon is moving approximately 3.8 cm away from our planet every year."
+                "In 1833 a man by the name of Charles Babbage invented all the parts that are now used for a modern computer. But it was only 120 years later that the first ‘modern’ computers were invented.",
+                "Konrad Zuse was the inventor of the first computer in the world in 1936 and he named it the Z1. In 1939, he created the Z2 as the first electro-mechanical computer in the world.",
+                "So computers were born, and these early computers were made in the 1940s and were around the size of a large room and they used heaps of electricity. Can you imagine having a computer the size of a large room? How would you be able to sit in front of it?",
+                "Computers as we know them today only really started being made in 1980.",
+                "In 1980, the first one gigabyte disk drive was released in the world. It was a whopping US$40,000 with the weight of 550 pounds (almost 227kg). How on Earth did they move it?",
+                "Well, it’s literally a machine that takes what you put into it, and then gives you some information back. So you give it a command, just like you would your dog and it follows the command to give you the result you want. Pretty awesome machines these are.",
+                "Computers have something called a microprocessor that can make calculations super-fast.",
+                "They also have a memory, or what is referred to as RAM. This stores all the information you need when you’re not using it. It also keeps everything your computer needs to work nice and safe.",
+                "Computers have fans to keep them cool; otherwise they’ll get too hot",
+                "Do you enjoy playing video games? Well there are two games that were the first ever made in the US called Asteroids and Lunar Lander in 1980. Have you heard of them?",
+                "Over 6,000 computer viruses are released each month.",
+                "This is crazy! The first computer mouse ever made was made of wood.",
+                "Did you know that you blink up to 20 times a minute? Well this is quite awesome…you only blink 7 times a minute when you’re using a computer! Must be all that concentration."
+                "If you open up the case of the original Macintosh, there are 47 signatures there, which are from each member of the Apple’s Macintosh division in 1982."
+                "The first Apple computer ever made by Steve Jobs and Steve Wozniak was made from old parts they collected for free from their staff!."
+                "Facebook has over a billion users. If it was a country it would be the third largest in the world."
+                "HP, Google, Microsoft and Apple all started out of garages. Wow, and look how far they’ve come."
+                "Stewardesses’ is the longest word you can type with one hand. Go on, give it a try."
+                "When you’re all grown up and working and you use a computer each day, your hands would have travelled 12.6 miles (about 20km) per day!"
             ],
-            "SKILL_NAME" : "American Space Facts",
+            "SKILL_NAME" : "American Computer Facts",
             "GET_FACT_MESSAGE" : "Here's your fact: ",
-            "HELP_MESSAGE" : "You can say tell me a space fact, or, you can say exit... What can I help you with?",
+            "HELP_MESSAGE" : "You can say tell me a computer fact, or, you can say exit... What can I help you with?",
             "HELP_REPROMPT" : "What can I help you with?",
             "STOP_MESSAGE" : "Goodbye!"
         }
     },
-    "de-DE": {
-        "translation": {
-            "FACTS": [
-                "Ein Jahr dauert auf dem Merkur nur 88 Tage.",
-                "Die Venus ist zwar weiter von der Sonne entfernt, hat aber höhere Temperaturen als Merkur.",
-                "Venus dreht sich entgegen dem Uhrzeigersinn, möglicherweise aufgrund eines früheren Zusammenstoßes mit einem Asteroiden.",
-                "Auf dem Mars erscheint die Sonne nur halb so groß wie auf der Erde.",
-                "Die Erde ist der einzige Planet, der nicht nach einem Gott benannt ist.",
-                "Jupiter hat den kürzesten Tag aller Planeten.",
-                "Die Milchstraßengalaxis wird in etwa 5 Milliarden Jahren mit der Andromeda-Galaxis zusammenstoßen.",
-                "Die Sonne macht rund 99,86 % der Masse im Sonnensystem aus.",
-                "Die Sonne ist eine fast perfekte Kugel.",
-                "Eine Sonnenfinsternis kann alle ein bis zwei Jahre eintreten. Sie ist daher ein seltenes Ereignis.",
-                "Der Saturn strahlt zweieinhalb mal mehr Energie in den Weltraum aus als er von der Sonne erhält.",
-                "Die Temperatur in der Sonne kann 15 Millionen Grad Celsius erreichen.",
-                "Der Mond entfernt sich von unserem Planeten etwa 3,8 cm pro Jahr."
-            ],
-            "SKILL_NAME" : "Weltraumwissen auf Deutsch",
-            "GET_FACT_MESSAGE" : "Hier sind deine Fakten: ",
-            "HELP_MESSAGE" : "Du kannst sagen, „Nenne mir einen Fakt über den Weltraum“, oder du kannst „Beenden“ sagen... Wie kann ich dir helfen?",
-            "HELP_REPROMPT" : "Wie kann ich dir helfen?",
-            "STOP_MESSAGE" : "Auf Wiedersehen!"
-        }
-    }
-};
+
 
 exports.handler = function(event, context, callback) {
     var alexa = Alexa.handler(event, context);
@@ -94,7 +82,7 @@ var handlers = {
         this.emit('GetFact');
     },
     'GetFact': function () {
-        // Get a random space fact from the space facts list
+        // Get a random computer fact from the computer facts list
         // Use this.t() to get corresponding language data
         var factArr = this.t('FACTS');
         var factIndex = Math.floor(Math.random() * factArr.length);
