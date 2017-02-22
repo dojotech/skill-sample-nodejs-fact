@@ -26,7 +26,7 @@ var languageStrings = {
                 "Stewardesses’ is the longest word you can type with one hand. Go on, give it a try."
                 "When you’re all grown up and working and you use a computer each day, your hands would have travelled 12.6 miles (about 20km) per day!"
             ],
-            "SKILL_NAME" : "English Computer Facts",
+            "SKILL_NAME" : "British Computer Facts",
             "GET_FACT_MESSAGE" : "Here's your computer fact: ",
             "HELP_MESSAGE" : "You can say tell me a computer fact, or, you can say exit... What can I help you with?",
             "HELP_REPROMPT" : "What can I help you with?",
